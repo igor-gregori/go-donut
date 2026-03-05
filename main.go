@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-const screen_width float64 = 30
+const screen_width float64 = 40
 const screen_height float64 = 60
 
 const theta_spacing float64 = 0.07
@@ -58,7 +58,6 @@ func render(A float64, B float64) {
 
 			var xp int64 = int64(screen_width/2 + K1*ooz*x)
 			var yp int64 = int64(screen_height/2 - K1*ooz*y)
-			// fmt.Println("p1", screen_height/2, "p2", K1*ooz*y)
 			if yp < 0 {
 				yp = 0
 			}
@@ -68,7 +67,6 @@ func render(A float64, B float64) {
 
 			// If L is less than zero, we dont need plot something
 			if L > 0 {
-				// fmt.Println("xp", xp, "yp", yp)
 				if ooz > zbuffer[xp][yp] {
 					zbuffer[xp][yp] = ooz
 					var luminance_index int64 = int64(L * 8)
